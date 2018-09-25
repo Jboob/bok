@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bok
+    username: root
+    password: 123
+
+  #配置自动建表：update:没有表新建，有表更新操作,控制台显示建表语句
+  jpa:
+    hibernate:
+      ddl-auto: create
+      show-sql: true
