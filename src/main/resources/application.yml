@@ -1,12 +1,16 @@
+server:
+  port: 8090
 spring:
   datasource:
     driver-class-name:  com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/bok
+    url: jdbc:mysql://127.0.0.1:3306/bok?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: 123
+    password: 123456
 
   #配置自动建表：update:没有表新建，有表更新操作,控制台显示建表语句
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       show-sql: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

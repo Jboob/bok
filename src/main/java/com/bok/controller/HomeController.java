@@ -30,7 +30,7 @@ public class HomeController {
     @PostMapping
     public String index(){
         UserInfo userInfo = new UserInfo();
-        userInfo.setUserId("123");
+        userInfo.setUserId("212131213");
         userInfo.setUserName("张三");
         userInfo.setUserPass("hyqwyqywyqwuuqwaasnajsnmanmsma");
         homeRepository.save(userInfo);

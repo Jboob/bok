@@ -10,15 +10,14 @@ import javax.persistence.*;
 @Table(name = "tb_user")
 public class UserInfo {
 
-
     @Id
-    @GeneratedValue
+    @Column(name = "userId")
     public String userId;
 
-    @Column(length = 50,nullable = false)
+    @Column(name = "userName")
     public String userName;
 
-    @Column(length = 100,nullable = false)
+    @Column(name = "userPass")
     public String userPass;
 
     public String getUserId() {
