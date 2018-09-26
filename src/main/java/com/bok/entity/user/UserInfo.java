@@ -1,24 +1,36 @@
 package com.bok.entity.user;
 
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_user")
 public class UserInfo {
 
+
     @Id
     @Column(name = "userId")
     public String userId;
 
-    @Column(name = "userName")
+    @Column(name="userName")
     public String userName;
 
     @Column(name = "userPass")
     public String userPass;
+
+    private List<String> roles;
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
 
     public String getUserId() {
         return userId;
