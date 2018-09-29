@@ -3,6 +3,7 @@ package com.bok.service.impl;
 import com.bok.entity.user.UserInfo;
 import com.bok.repository.IUserRepository;
 import com.bok.security.JwtTokenUtil;
+import com.bok.security.impl.JwtUserDetailsServiceImpl;
 import com.bok.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,7 +28,7 @@ public class UserServiceImpl implements IUserService {
     private IUserRepository userRepository;
 
     @Autowired
-    public UserServiceImpl(AuthenticationManager authenticationManager, UserDetailsService userDetailsService, JwtTokenUtil jwtTokenUtil, IUserRepository userRepository) {
+    public UserServiceImpl(AuthenticationManager authenticationManager, @Qualifier("jwtUserDetailsServiceImpl") UserDetailsService userDetailsService, JwtTokenUtil jwtTokenUtil, IUserRepository userRepository) {
         this.authenticationManager = authenticationManager;
         this.userDetailsService = userDetailsService;
         this.jwtTokenUtil = jwtTokenUtil;

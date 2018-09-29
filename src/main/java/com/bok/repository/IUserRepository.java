@@ -1,7 +1,9 @@
 package com.bok.repository;
 
 import com.bok.entity.user.UserInfo;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * 用户表操作接口

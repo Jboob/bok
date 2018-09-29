@@ -1,10 +1,7 @@
 package com.bok.entity.user;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -22,6 +19,7 @@ public class UserInfo {
     @Column(name = "userPass")
     public String userPass;
 
+    @Transient
     private List<String> roles;
 
     public List<String> getRoles() {
